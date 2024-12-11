@@ -31,7 +31,7 @@ interface ServertoClient{
     'error':(message:string)=>void
 
     }
-const PORTS=`ws://localhost:4000`
+const PORTS=`${import.meta.env.VITE_BACKENDURL}`
 console.log(`${import.meta.env.VITE_BACKENDURL}`)
 const socket:Socket<ServertoClient,ClientoServer>=io(PORTS)
 
