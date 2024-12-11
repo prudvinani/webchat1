@@ -25,6 +25,7 @@ const httpServer=createServer(app)
 const io=new Server(httpServer,{
     cors:{
        credentials:true,
+       origin:['https://webchat1-998e.vercel.app'],
         methods:["GET,POST"]
     }
 })
