@@ -1,0 +1,15 @@
+node-modules/
+.env
+# Ignore system files
+*.swp
+*.swo
+*.swn
+*.tmp
+*.log
+*.dat
+
+# Ignore user directories
+*.txt
+*.docx
+.DS_Store
+node_modules/
