@@ -1,7 +1,10 @@
+import dotenv from "dotenv"
+dotenv.config()
 import experss from "express"
 import { createServer } from "http"
 import { randomBytes } from "crypto"
 import {Server} from "socket.io"
+
 
 
 interface Message{
@@ -25,7 +28,6 @@ const httpServer=createServer(app)
 const io=new Server(httpServer,{
     cors:{
        credentials:true,
-       origin:['https://webchat1-998e.vercel.app'],
         methods:["GET,POST"]
     }
 })
@@ -115,7 +117,8 @@ setInterval(() => {
     });
   }, 3600000);
   
-  const PORT = 4000;
+  const PORT = process.env.PORT || 4000;
+  console.log(process.env.PORT)
   httpServer.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
   }); 
