@@ -31,7 +31,8 @@ interface ServertoClient{
     'error':(message:string)=>void
 
     }
-const PORTS=`${import.meta.env.PORT}`
+const PORTS=`ws://localhost:4000`
+console.log(`${import.meta.env.VITE_BACKENDURL}`)
 const socket:Socket<ServertoClient,ClientoServer>=io(PORTS)
 
 const MessageGroup = ({ messages, userId }: { messages: Message[], userId: string }) => {
