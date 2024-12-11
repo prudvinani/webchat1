@@ -31,7 +31,7 @@ interface ServertoClient{
     'error':(message:string)=>void
 
     }
-const PORTS=process.env.PORT
+const PORTS=`${import.meta.env.PORT}`
 const socket:Socket<ServertoClient,ClientoServer>=io(PORTS)
 
 const MessageGroup = ({ messages, userId }: { messages: Message[], userId: string }) => {
